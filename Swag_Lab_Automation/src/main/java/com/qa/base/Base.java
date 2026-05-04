@@ -1,125 +1,135 @@
 package com.qa.base;
 
+import io.qameta.allure.Allure;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.edge.*;
+import org.openqa.selenium.firefox.*;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
+import org.testng.annotations.Optional;
+
 import java.io.*;
-import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.*;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.*;  // ✅ Add import
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
+public class Base {
+    
+    protected String path = System.getProperty("user.dir");
+    
+    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    
+    public static Properties prop = new Properties();
+    public static Properties loc = new Properties();
 
-import com.aventstack.extentreports.*;
-import com.aventstack.extentreports.markuputils.*;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
+    public static WebDriver getDriver() {
+        return driver.get();
+    }
 
-public class Base
-{
-	String path = System.getProperty("user.dir");
-	public static WebDriver driver;
-	public static FileInputStream file1, file2;
-	public static Properties prop = new Properties();
-	public static Properties loc = new Properties();
-	public static ExtentSparkReporter sparkReporter;
-	public static ExtentReports extent;
-	public static ExtentTest logger;
+    // ==========================================
+    // THE SMART FETCHER (NEW)
+    // ==========================================
+    public static String getSecureConfig(String key) {
+        // 1. Check if the Cloud (Maven -D flag) has the secret
+        String value = System.getProperty(key);
+        
+        // 2. If null (running locally), grab it from the local properties file
+        if (value == null || value.trim().isEmpty()) {
+            value = prop.getProperty(key);
+        }
+        
+        // 3. Failsafe: If it's STILL null, throw an error so you aren't debugging a ghost
+        if (value == null) {
+            throw new RuntimeException("CRITICAL: Configuration key '" + key + "' is missing from both Cloud Secrets and Local Properties!");
+        }
+        
+        return value;
+    }
 
-	@BeforeTest
-	public void beforeTest()
-	{
-//		sparkReporter = new ExtentSparkReporter(path + File.separator + "Reports" + File.separator + "TestReports.html");
-//		src\test\resources\Reports
-		sparkReporter = new ExtentSparkReporter(path +"/src/test/resources/Reports"+"TestReports.html");
-		extent = new ExtentReports();
-		extent.attachReporter(sparkReporter);
-		sparkReporter.config().setTheme(Theme.STANDARD);
-		extent.setSystemInfo("HostName", "null");
-		extent.setSystemInfo("Username", "Root");
-		extent.setSystemInfo("OS", "Windows 11");
-		sparkReporter.config().setDocumentTitle("Test Report");
-		sparkReporter.config().setReportName("Automation Test Result");
-	}
+    @BeforeSuite
+    public void loadConfig() {
+        try (FileInputStream file1 = new FileInputStream(path + "/src/main/java/com/qa/config/config.properties");
+             FileInputStream file2 = new FileInputStream(path + "/src/main/java/com/qa/config/locators.properties")) { 
+            prop.load(file1); 
+            loc.load(file2); 
+        } catch (IOException e) { 
+            throw new RuntimeException("Failed to load property files: " + e.getMessage()); 
+        }
+    }
 
-	@BeforeMethod
-	@Parameters("browser")
-	public void beforeMethod(String browser, Method testMethod) throws IOException
-	{
-		logger = extent.createTest(testMethod.getName());
-		setupDriver(browser);
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.get(prop.getProperty("url"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-	}
+    @BeforeMethod
+    @Parameters("browser")
+    public void beforeMethod(@Optional("chrome") String browser) {
+        setupDriver(browser);
+        WebDriver currentDriver = getDriver(); 
+        
+        currentDriver.manage().window().maximize();
+        currentDriver.manage().deleteAllCookies(); 
+        
+        // UPDATED: Now uses the Smart Fetcher instead of direct prop fetching
+        currentDriver.get(getSecureConfig("url")); 
+        
+        currentDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        currentDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+    }
 
-	@AfterMethod
-	public void afterMethod(ITestResult result)
-	{
-		if(result.getStatus() == ITestResult.FAILURE)
-		{
-			logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " Test case failed", ExtentColor.RED));
-			logger.log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " Test case failed", ExtentColor.RED));
-		}
-		else if(result.getStatus() == ITestResult.SKIP)
-		{
-			logger.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " Test case Skipped", ExtentColor.ORANGE));
-		}
-		else if(result.getStatus() == ITestResult.SUCCESS)
-		{
-			logger.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " Test case Passed", ExtentColor.GREEN));
-		}
+    @AfterMethod
+    public void afterMethod(ITestResult result) { 
+        WebDriver currentDriver = getDriver();
+        
+        if (result.getStatus() == ITestResult.FAILURE && currentDriver != null) { 
+            Allure.addAttachment("Screenshot on Failure",
+                new ByteArrayInputStream(((TakesScreenshot) currentDriver).getScreenshotAs(OutputType.BYTES)));
+        }
 
-		if(driver != null)
-		{
-			driver.quit();
-			driver = null;
-		}
-	}
+        if (currentDriver != null) {
+            currentDriver.quit();
+            driver.remove();
+        }
+    }
 
-	@AfterTest
-	public void afterTest()
-	{
-		extent.flush();
-	}
+    public void setupDriver(String browser) {
+        // ==========================================
+        // CI/CD AUTO-DETECTOR (NEW)
+        // ==========================================
+        boolean isCI = System.getenv("GITHUB_ACTIONS") != null;
+        boolean isHeadless = isCI || Boolean.parseBoolean(System.getProperty("headless", "false"));
 
-	public void setupDriver(String browser) throws IOException
-	{
-		if (prop.isEmpty())
-		{
-			file1 = new FileInputStream(path + "/src/main/java/com/qa/config/config.properties");
-			file2 = new FileInputStream(path + "/src/main/java/com/qa/config/locators.properties");
-			prop.load(file1);
-			loc.load(file2);
-		}
+        if (browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
 
-		if(browser.equalsIgnoreCase("chrome"))
-		{
-			// ✅ Add ChromeOptions to disable password popup
-			ChromeOptions options = new ChromeOptions();
+            Map<String, Object> prefs = new HashMap<>();
+            prefs.put("credentials_enable_service", false);
+            prefs.put("profile.password_manager_enabled", false);
+            options.setExperimentalOption("prefs", prefs);
 
-			// Additional safeguards
-			Map<String, Object> prefs = new HashMap<>();
-			prefs.put("credentials_enable_service", false);
-			prefs.put("profile.password_manager_enabled", false);
-			options.setExperimentalOption("prefs", prefs);
+            options.addArguments("--disable-blink-features=AutomationControlled");
+            options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 
-			options.addArguments("--disable-blink-features=AutomationControlled");
-			options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-
-			driver = new ChromeDriver(options);  // ✅ Pass options to ChromeDriver
-		}
-		else if(browser.equalsIgnoreCase("firefox"))
-		{
-			driver = new FirefoxDriver();
-		}
-		else if(browser.equalsIgnoreCase("edge"))
-		{
-			driver = new EdgeDriver();
-		}
-	}
+            if (isHeadless) {
+                options.addArguments("--headless=new");
+                options.addArguments("--window-size=1920,1080");
+            }
+            driver.set(new ChromeDriver(options));
+            
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            FirefoxOptions options = new FirefoxOptions();
+            if (isHeadless) {
+                options.addArguments("-headless");
+                options.addArguments("--width=1920");
+                options.addArguments("--height=1080");
+            }
+            driver.set(new FirefoxDriver(options));
+            
+        } else if (browser.equalsIgnoreCase("edge")) {
+            EdgeOptions options = new EdgeOptions();
+            if (isHeadless) {
+                options.addArguments("--headless=new");
+                options.addArguments("--window-size=1920,1080");
+            }
+            driver.set(new EdgeDriver(options));
+        } else {
+            throw new IllegalArgumentException("Browser not supported: " + browser);
+        }
+    }
 }

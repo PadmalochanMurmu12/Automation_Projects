@@ -1,0 +1,12 @@
+# Public Configuration
+browser=chrome
+url=https://www.saucedemo.com/v1/
+expectedURL=https://www.saucedemo.com/inventory.html
+quantity=5
+
+# Secret Credentials (Injected via CI/CD)
+username=YOUR_USERNAME_HERE
+password=YOUR_PASSWORD_HERE
+firstname=YOUR_FIRSTNAME_HERE
+lastname=YOUR_LASTNAME_HERE
+zipcode=YOUR_ZIPCODE_HERE

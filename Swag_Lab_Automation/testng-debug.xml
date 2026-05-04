@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <!-- Added parallel="tests" to trigger cross-browser execution simultaneously -->
-<suite name="Swaglab_Automation_TestSuite" parallel="tests" thread-count="3">
+<suite name="Swaglab_Automation_TestSuite">
   
   <listeners>
     <!-- Updated path to reflect the new com.qa.utils package -->

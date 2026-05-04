@@ -1,1 +1,41 @@
 /target/
+# ==============================
+# 1. Maven Build Output
+# ==============================
+target/
+
+# ==============================
+# 2. Test Execution & Reports
+# ==============================
+test-output/
+allure-results/
+Reports/
+Screenshots/
+
+# ==============================
+# 3. Logs
+# ==============================
+*.log
+logs/
+
+# ==============================
+# 4. Eclipse IDE Metadata
+# ==============================
+.settings/
+.classpath
+.project
+.metadata/
+
+# ==============================
+# 5. OS Generated Files
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# 6. Utilities
+# ==============================
+sample
+
+# Secret Configuration Files
+src/main/java/com/qa/config/config.properties

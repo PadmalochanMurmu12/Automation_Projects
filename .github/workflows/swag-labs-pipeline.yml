@@ -1,0 +1,61 @@
+name: Swag Labs Regression Suite
+
+# 1. THE TRIGGERS
+on:
+  push:
+    branches: [ "main", "master" ]
+    # Monorepo Path Filter: Only triggers if Swag Labs files are modified
+    paths:
+      - 'Swag_Lab_Automation/**'
+  pull_request:
+    branches: [ "main", "master" ]
+    paths:
+      - 'Swag_Lab_Automation/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    # 2. THE MONOREPO MAGIC
+    # Sets the default working directory for all run commands to your project folder
+    defaults:
+      run:
+        working-directory: ./Swag_Lab_Automation
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    # 3. JAVA ENVIRONMENT
+    - name: ☕ Set up JDK 25
+      uses: actions/setup-java@v4
+      with:
+        java-version: '25'
+        distribution: 'temurin'
+        cache: 'maven' # Automatically caches .m2 dependencies for faster future runs
+
+    # 4. TEST EXECUTION & SECRET INJECTION
+    - name: 🚀 Execute Tests
+      # The '>' allows us to break a single long terminal command across multiple lines for readability.
+      # We inject the GitHub Vault secrets directly into Maven using the -D flag.
+      run: >
+        mvn clean test 
+        -Dusername=${{ secrets.TEST_USERNAME }} 
+        -Dpassword=${{ secrets.TEST_PASSWORD }} 
+        -Dfirstname=${{ secrets.TEST_FIRSTNAME }} 
+        -Dlastname=${{ secrets.TEST_LASTNAME }} 
+        -Dzipcode=${{ secrets.TEST_ZIPCODE }}
+      
+      # Prevents the pipeline from instantly crashing if an assertion fails, so we still get our report
+      continue-on-error: true 
+
+    # 5. REPORT GENERATION
+    - name: 📊 Upload Allure Results Artifact
+      uses: actions/upload-artifact@v4
+      # always() ensures this runs even if the Maven step above had failing tests
+      if: always() 
+      with:
+        name: allure-raw-results
+        # Explicit path required because actions/upload-artifact ignores the 'defaults: run:' directory
+        path: Swag_Lab_Automation/target/allure-results/
+        retention-days: 7
