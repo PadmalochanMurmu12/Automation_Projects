@@ -4,17 +4,26 @@ name: Swag Labs Regression Suite
 on:
   push:
     branches: [ "main", "master" ]
-    # Monorepo Path Filter: Only triggers if Swag Labs files are modified
+    # Monorepo Path Filter: Triggers if Swag Labs files OR the pipeline itself is modified
     paths:
       - 'Swag_Lab_Automation/**'
+      - '.github/workflows/**'
   pull_request:
     branches: [ "main", "master" ]
     paths:
       - 'Swag_Lab_Automation/**'
+      - '.github/workflows/**'
+  
+  # The Manual Override Button
+  workflow_dispatch: 
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    
+    # Silences the Node 20 deprecation warning
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     # 2. THE MONOREPO MAGIC
     # Sets the default working directory for all run commands to your project folder
@@ -34,9 +43,9 @@ jobs:
         distribution: 'temurin'
         cache: 'maven' # Automatically caches .m2 dependencies for faster future runs
 
-    # 4. TEST EXECUTION & SECRET INJECTION
+    # 4. TEST EXECUTION & CONFIG INJECTION
     - name: 🚀 Execute Tests
-      # We inject secrets from the vault, AND hardcode the public non-secrets
+      # We inject secrets from the vault AND hardcode the public non-secrets
       run: >
         mvn clean test 
         -Dusername=${{ secrets.TEST_USERNAME }} 
@@ -47,10 +56,9 @@ jobs:
         -Durl="https://www.saucedemo.com/v1/"
         -DexpectedURL="https://www.saucedemo.com/inventory.html"
         -Dquantity="5"
-      continue-on-error: true
       
       # Prevents the pipeline from instantly crashing if an assertion fails, so we still get our report
-
+      continue-on-error: true 
 
     # 5. REPORT GENERATION
     - name: 📊 Upload Allure Results Artifact
