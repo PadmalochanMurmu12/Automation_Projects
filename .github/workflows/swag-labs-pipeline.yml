@@ -36,8 +36,7 @@ jobs:
 
     # 4. TEST EXECUTION & SECRET INJECTION
     - name: 🚀 Execute Tests
-      # The '>' allows us to break a single long terminal command across multiple lines for readability.
-      # We inject the GitHub Vault secrets directly into Maven using the -D flag.
+      # We inject secrets from the vault, AND hardcode the public non-secrets
       run: >
         mvn clean test 
         -Dusername=${{ secrets.TEST_USERNAME }} 
@@ -45,9 +44,13 @@ jobs:
         -Dfirstname=${{ secrets.TEST_FIRSTNAME }} 
         -Dlastname=${{ secrets.TEST_LASTNAME }} 
         -Dzipcode=${{ secrets.TEST_ZIPCODE }}
+        -Durl="https://www.saucedemo.com/v1/"
+        -DexpectedURL="https://www.saucedemo.com/inventory.html"
+        -Dquantity="5"
+      continue-on-error: true
       
       # Prevents the pipeline from instantly crashing if an assertion fails, so we still get our report
-      continue-on-error: true 
+
 
     # 5. REPORT GENERATION
     - name: 📊 Upload Allure Results Artifact
