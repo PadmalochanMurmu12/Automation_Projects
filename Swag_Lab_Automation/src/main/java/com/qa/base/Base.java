@@ -48,12 +48,21 @@ public class Base {
 
     @BeforeSuite
     public void loadConfig() {
-        try (FileInputStream file1 = new FileInputStream(path + "/src/main/java/com/qa/config/config.properties");
-             FileInputStream file2 = new FileInputStream(path + "/src/main/java/com/qa/config/locators.properties")) { 
-            prop.load(file1); 
-            loc.load(file2); 
-        } catch (IOException e) { 
-            throw new RuntimeException("Failed to load property files: " + e.getMessage()); 
+        // 1. Attempt to load the local Config file (Will fail in the Cloud, which is expected)
+        try {
+            FileInputStream file1 = new FileInputStream(path + "/src/main/java/com/qa/config/config.properties");
+            prop.load(file1);
+        } catch (IOException e) {
+            System.out.println("WARNING: config.properties not found locally. Framework will rely entirely on Cloud System Properties (Secrets).");
+        }
+
+        // 2. Attempt to load the Locators file (Must NEVER fail, as this file is pushed to GitHub)
+        try {
+            FileInputStream file2 = new FileInputStream(path + "/src/main/java/com/qa/config/locators.properties");
+            loc.load(file2);
+        } catch (IOException e) {
+            // If locators are missing, the test cannot proceed under any circumstances
+            throw new RuntimeException("CRITICAL FAILURE: locators.properties is missing from the repository! " + e.getMessage());
         }
     }
 
