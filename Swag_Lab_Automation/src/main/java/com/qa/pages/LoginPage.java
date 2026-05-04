@@ -1,40 +1,38 @@
 package com.qa.pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage
-{
-	static WebDriver driver;
-	public WebDriverWait wait;
+public class LoginPage {
 
-	public LoginPage(WebDriver driver)
-	{
-		this.driver= driver;
-		this.wait= new WebDriverWait(driver, Duration.ofSeconds(15));
+	// NO static keyword.
+	private WebDriver driver;
+	private WebDriverWait wait;
+
+	// Constructor strictly accepts WebDriver without illegal ThreadLocal casting
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 	}
 
-	//	Locators
-	public By userName= By.id("user-name");
-	public By password= By.id("password");
-	public By loginBtn= By.id("login-button");
+	// Locators strictly encapsulated
+	private By userName = By.id("user-name");
+	private By password = By.id("password");
+	private By loginBtn = By.id("login-button");
 
-	public WebElement getUserName()
-	{
+	public WebElement getUserName() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(userName));
 	}
-	
-	public WebElement getPassword()
-	{
+
+	public WebElement getPassword() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(password));
 	}
-	
-	public WebElement getLoginBtn()
-	{
+
+	public WebElement getLoginBtn() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(loginBtn));
 	}
 }

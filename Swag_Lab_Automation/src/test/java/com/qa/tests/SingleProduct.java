@@ -1,42 +1,55 @@
 package com.qa.tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import io.qameta.allure.*;
 import com.qa.base.Base;
 import com.qa.pageEvents.*;
 
-public class SingleProduct extends Base
-{
-	@Test(description="Complete flow: Login -> Select Product -> Add to Cart")
-	public void testCompleteProductPurchaseFlow() throws InterruptedException
-	{
-		// Step 1: Login
-		LoginPageEvents loginEvent = new LoginPageEvents(driver);
+@Epic("Regression Suite")
+@Feature("Complete Product Purchase Flow")
+public class SingleProduct extends Base {
+	private static final Logger logger = LogManager.getLogger(SingleProduct.class);
+	@Test(description = "End-to-End purchase flow")
+	public void testCompleteProductPurchaseFlow() {
+
+		// 1. Get the thread-safe driver instance
+		WebDriver currentDriver = getDriver();
+
+		// 2. Login Phase
+		logger.info("Phase 1: Login");
+		LoginPageEvents loginEvent = new LoginPageEvents(currentDriver);
 		loginEvent.enterCreds();
-//		loginEvent.validateSuccessfulLogin();
+		// Fail-Fast: If login fails, don't proceed.
+		Assert.assertTrue(loginEvent.isLoginSuccessful(), "Login failed: Current URL does not match inventory page.");
 
-		AddtoCartEvents cartEvent = new AddtoCartEvents(driver);
+		// 3. Product Selection Phase
+		logger.info("Phase 2: Adding Product to Cart");
+		AddtoCartEvents cartEvent = new AddtoCartEvents(currentDriver);
 		cartEvent.clickOnItem();
-
-		Thread.sleep(3000);
 		cartEvent.clickAddToCart();
+		System.out.println("✅ Product added to cart");
 
-		Thread.sleep(3000);
-		System.out.println("✅ Product added to cart successfully");
-		
 		cartEvent.clickCartBadge();
-		Thread.sleep(3000);
-		
-		CheckoutPageEvents checkoutEvents= new CheckoutPageEvents(driver);
+
+		// 4. Checkout Phase
+		logger.info("Phase 3: Checkout and Order Placement");
+		CheckoutPageEvents checkoutEvents = new CheckoutPageEvents(currentDriver);
+		// Verify we are actually on the checkout page before clicking
+		Assert.assertTrue(checkoutEvents.isCheckoutButtonVisible(), "Checkout button not found on cart page.");
 		checkoutEvents.proceedToCheckout();
-		Thread.sleep(3000);
-		
-		PlaceOrderEvents orderEvents= new PlaceOrderEvents(driver);
+
+		// 5. Order Placement Phase
+		PlaceOrderEvents orderEvents = new PlaceOrderEvents(currentDriver);
 		orderEvents.fillAddress();
 		orderEvents.clickContinue();
-		Thread.sleep(3000);
-		
 		orderEvents.placeOrder();
-		Thread.sleep(3000);
-		
+
+		// 6. Final End-to-End Assertion
+		Assert.assertTrue(orderEvents.isOrderConfirmationDisplayed(), "Final order confirmation message was not displayed!");
+		logger.info("Test Case Completed Successfully.");
 	}
 }
