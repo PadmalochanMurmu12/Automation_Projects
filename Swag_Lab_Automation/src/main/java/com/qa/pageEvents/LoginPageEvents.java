@@ -20,14 +20,18 @@ public class LoginPageEvents {
 	}
 
 	public void enterCreds() {
-		logger.info("Attempting to enter credentials from properties file.");
-		lp.getUserName().sendKeys(Base.prop.getProperty("username"));
-		lp.getPassword().sendKeys(Base.prop.getProperty("password"), Keys.ENTER);
-	}
+        // Fetching via the Smart Fetcher so it pulls from GitHub Secrets
+        String user = Base.getSecureConfig("username");
+        String pass = Base.getSecureConfig("password");
+        
+        // Feed the secure strings into your LoginPage (lp) elements
+        lp.getUserName().sendKeys(user); // Replace getUsernameField() with your actual method name
+        lp.getPassword().sendKeys(pass); // Replace getPasswordField() with your actual method name
+    }
 
 	public boolean isLoginSuccessful() {
 		logger.info("Verifying login success via URL validation.");
-		String expectedUrl = Base.prop.getProperty("expectedURL");
+		String expectedUrl = Base.getSecureConfig("expectedURL");
 		String actualUrl = driver.getCurrentUrl();
 		
 		if(actualUrl.equals(expectedUrl)) {
