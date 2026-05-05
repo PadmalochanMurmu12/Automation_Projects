@@ -21,10 +21,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     
-    # Silences the Node 20 deprecation warning
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-    
     # 2. THE MONOREPO MAGIC
     # Sets the default working directory for all run commands to your project folder
     defaults:
@@ -53,8 +49,8 @@ jobs:
         -Dfirstname=${{ secrets.TEST_FIRSTNAME }} 
         -Dlastname=${{ secrets.TEST_LASTNAME }} 
         -Dzipcode=${{ secrets.TEST_ZIPCODE }}
-        -Durl="https://www.saucedemo.com/v1/"
-        -DexpectedURL="https://www.saucedemo.com/inventory.html"
+        -Durl="https://www.saucedemo.com/"
+        -DexpectedTitle="Swag Labs"
         -Dquantity="5"
       
       # Prevents the pipeline from instantly crashing if an assertion fails, so we still get our report

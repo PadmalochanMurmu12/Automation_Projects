@@ -39,3 +39,4 @@ sample
 
 # Secret Configuration Files
 src/main/java/com/qa/config/config.properties
+/bin/

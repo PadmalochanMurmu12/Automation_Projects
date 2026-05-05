@@ -1,7 +1,7 @@
 # Public Configuration
 browser=chrome
 url=https://www.saucedemo.com/v1/
-expectedURL=https://www.saucedemo.com/inventory.html
+expectedTitle=Swag Labs
 quantity=5
 
 # Secret Credentials (Injected via CI/CD)
