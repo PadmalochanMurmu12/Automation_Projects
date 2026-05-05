@@ -30,15 +30,15 @@ public class LoginPageEvents {
     }
 
 	public boolean isLoginSuccessful() {
-		logger.info("Verifying login success via URL validation.");
-		String expectedUrl = Base.getSecureConfig("expectedURL");
-		String actualUrl = driver.getCurrentUrl();
+		logger.info("Verifying login success via title validation.");
+		String expectedTitle = Base.getSecureConfig("expectedTitle");
+		String actualTitle = driver.getTitle();
 		
-		if(actualUrl.equals(expectedUrl)) {
-            logger.info("Login verified successfully. Redirected to: " + actualUrl);
+		if(actualTitle.equals(expectedTitle)) {
+            logger.info("Login verified successfully. Redirected to: " + actualTitle);
             return true;
         } else {
-            logger.error("Login verification FAILED. Expected: " + expectedUrl + " but got: " + actualUrl);
+            logger.error("Login verification FAILED. Expected: " + expectedTitle + " but got: " + actualTitle);
             return false;
         }
 	}
