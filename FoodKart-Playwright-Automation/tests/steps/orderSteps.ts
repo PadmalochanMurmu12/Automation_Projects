@@ -27,6 +27,7 @@ When('I submit my payment details', async ({ payments }) => {
     expiryDate: testData.mockCardDetails.expiryDate,
     cvv: testData.mockCardDetails.cvv,
     cardHolderName: testData.mockCardDetails.cardHolderName,
+    zipCode: testData.mockCardDetails.zipCode,
   };
   await payments.submitPayment(paymentDetails);
 });

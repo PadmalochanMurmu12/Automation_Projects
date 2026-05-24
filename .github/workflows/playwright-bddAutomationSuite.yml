@@ -28,27 +28,22 @@ jobs:
     - name: 📥 Checkout Repository
       uses: actions/checkout@v4
 
-    # THE FIX: We are a Node.js shop now. Throw out Java.
     - name: 🟢 Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' 
+        node-version: '24' 
         cache: 'npm'
-        # Crucial for monorepos: tell the cache exactly where the lock file is
         cache-dependency-path: './FoodKart-Playwright-Automation/package-lock.json'
 
     - name: 📦 Install Dependencies
       run: npm ci
 
-    # THE MISSING LINK: Playwright needs the actual browser engines installed on the Linux runner
     - name: 🎭 Install Playwright Browsers
       run: npx playwright install --with-deps
 
     - name: 🚀 Execute Tests
-      # This single command handles rimraf, bddgen, and playwright execution
       run: npm run test
       env:
-        # This is where your GitHub Variable gets injected if you choose to use it
         BASE_URL: ${{ vars.BASE_URL }}
 
     - name: 📊 Upload Allure Results Artifact

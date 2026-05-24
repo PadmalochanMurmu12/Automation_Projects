@@ -11,6 +11,7 @@
     "cardNumber": "4242424242424242", 
     "expiryDate": "12/30",
     "cvv": "123",
-    "cardHolderName": "Test User"
+    "cardHolderName": "Test User",
+    "zipCode": "10001"
   }
 }

@@ -7,12 +7,10 @@ on:
     # Monorepo Path Filter: Triggers if Swag Labs files OR the pipeline itself is modified
     paths:
       - 'Swag_Lab_Automation/**'
-      - '.github/workflows/**'
   pull_request:
     branches: [ "main", "master" ]
     paths:
       - 'Swag_Lab_Automation/**'
-      - '.github/workflows/**'
   
   # The Manual Override Button
   workflow_dispatch: 

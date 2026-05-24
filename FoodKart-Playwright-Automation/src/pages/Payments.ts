@@ -7,6 +7,8 @@ export interface PaymentDetails {
    expiryDate: string;
    cvv: string;
    cardHolderName: string;
+   zipCode?: string;
+   phoneNumber?: string;
 }
 
 export class Payments extends BasePage {
@@ -15,6 +17,8 @@ export class Payments extends BasePage {
    readonly expiryDate: Locator;
    readonly cvv: Locator;
    readonly cardHolderName: Locator;
+   readonly zipCode: Locator;
+   readonly saveInfoCheckbox: Locator;
    readonly payBtn: Locator;
 
    constructor(page: Page) {
@@ -24,6 +28,10 @@ export class Payments extends BasePage {
      this.expiryDate = page.getByLabel('Expiration');
      this.cvv = page.getByPlaceholder('CVC');
      this.cardHolderName = page.getByPlaceholder('Full name on card');
+     this.zipCode = page.getByLabel('ZIP');
+     
+     this.saveInfoCheckbox = page.locator('#enableStripePass');
+     
      this.payBtn = page.getByTestId('submit-button-processing-label'); 
    }
 
@@ -35,6 +43,15 @@ export class Payments extends BasePage {
      await this.expiryDate.fill(details.expiryDate, {force: true});
      await this.cvv.fill(details.cvv, {force: true});
      await this.cardHolderName.fill(details.cardHolderName, {force: true});
+     
+     if (details.zipCode && await this.zipCode.isVisible()) {
+       await this.zipCode.fill(details.zipCode, {force: true});
+     }
+
+     if (await this.saveInfoCheckbox.isVisible() && await this.saveInfoCheckbox.isChecked()) {
+         await this.saveInfoCheckbox.uncheck({ force: true });
+     }
+
      await this.payBtn.click({force: true});
    }
 }
