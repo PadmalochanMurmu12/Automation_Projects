@@ -1,0 +1,27 @@
+{
+  "name": "foodkart-playwright-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf allure-results allure-report",
+    "bddgen": "bddgen",
+    "pretest": "npm run clean && npm run bddgen",
+    "test": "playwright test --reporter=line,allure-playwright",
+    "report": "allure generate ./allure-results --clean && allure open ./allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.9.0",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "allure-commandline": "^2.41.0",
+    "allure-playwright": "^3.9.0",
+    "mkdirp": "^3.0.1",
+    "playwright-bdd": "^8.5.1",
+    "rimraf": "^6.1.3"
+  }
+}
