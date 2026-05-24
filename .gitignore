@@ -1,0 +1,19 @@
+# Dependency Directories
+node_modules/
+
+# Playwright Test Output & Caching
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Playwright-BDD Generated Code
+.features-gen/
+
+# Allure Reporting Artifacts
+allure-results/
+allure-report/
+
+# OS / IDE Artifacts
+.DS_Store
+.vscode/
