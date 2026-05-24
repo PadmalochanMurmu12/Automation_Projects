@@ -1,0 +1,16 @@
+{
+  "url": "https://food-kart-tau.vercel.app/",
+  "singleItemOrder": {
+    "productName": "Margherita Pizza"
+  },
+  "multipleItemsOrder": {
+    "products": ["Butter Chicken with Biryani","Vada Pav","Chole Bhature","Masala Chai"]
+  },
+  "mockCardDetails": {
+    "emailAddress": "automation@test.com",
+    "cardNumber": "4242424242424242", 
+    "expiryDate": "12/30",
+    "cvv": "123",
+    "cardHolderName": "Test User"
+  }
+}
