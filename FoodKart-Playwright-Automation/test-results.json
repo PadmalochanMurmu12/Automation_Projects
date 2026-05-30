@@ -1,0 +1,1622 @@
+{
+  "config": {
+    "configFile": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\playwright.config.ts",
+    "rootDir": "D:/Automation_Projects/FoodKart-Playwright-Automation/.features-gen",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Automation_Projects/FoodKart-Playwright-Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Automation_Projects/FoodKart-Playwright-Automation/.features-gen",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "D:/Automation_Projects/FoodKart-Playwright-Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Automation_Projects/FoodKart-Playwright-Automation/.features-gen",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "D:/Automation_Projects/FoodKart-Playwright-Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Automation_Projects/FoodKart-Playwright-Automation/.features-gen",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        null
+      ],
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests\\features\\dynamicMultiItemMultiQuantity.feature.spec.js",
+      "file": "tests/features/dynamicMultiItemMultiQuantity.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Dynamic Multi-Item Multi-Quantity Order Flow",
+          "file": "tests/features/dynamicMultiItemMultiQuantity.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add multiple random items, dynamically increase quantities, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 50254,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating menu items to dynamically select 3 unique dishes...\n"
+                        },
+                        {
+                          "text": "Dynamically selected indices: 4, 6, 2\n"
+                        },
+                        {
+                          "text": "Extracted Random Items: Chole Kulche, Chole Bhature, Margherita Pizza\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 1705
+                        },
+                        {
+                          "title": "When I dynamically add 3 random items from the menu to my cart",
+                          "duration": 7758
+                        },
+                        {
+                          "title": "And I increase the quantity of all dynamically added items to 2",
+                          "duration": 805
+                        },
+                        {
+                          "title": "Then the cart should accurately reflect the dynamic total prices for all items",
+                          "duration": 451
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 3143
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 24211
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 4339
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:57:37.577Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4d197e86c84ee691d5d5-4c3b064f971dfdf2797e",
+              "file": "tests/features/dynamicMultiItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple random items, dynamically increase quantities, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 86,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:50.400Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4d197e86c84ee691d5d5-2b2b90122f5d23264cf2",
+              "file": "tests/features/dynamicMultiItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple random items, dynamically increase quantities, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 43,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:54.956Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4d197e86c84ee691d5d5-408014e3c6fa6da9dab2",
+              "file": "tests/features/dynamicMultiItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\features\\dynamicMultiOrders.feature.spec.js",
+      "file": "tests/features/dynamicMultiOrders.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Dynamic Multi-Item Order Flow",
+          "file": "tests/features/dynamicMultiOrders.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add multiple random products from the menu and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 49326,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating menu items to dynamically select 3 unique dishes...\n"
+                        },
+                        {
+                          "text": "Dynamically selected indices: 0, 5, 8\n"
+                        },
+                        {
+                          "text": "Extracted Random Items: Butter Chicken with Biryani, Crispy Spring Rolls, Chicken Frankie Roll\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 1216
+                        },
+                        {
+                          "title": "When I dynamically add 3 random items from the menu to my cart",
+                          "duration": 7287
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 5462
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 22461
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 5435
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:57:37.577Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fb8e68730f5fb2f9e448-8d12d108c415c9d03911",
+              "file": "tests/features/dynamicMultiOrders.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple random products from the menu and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 44,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:50.345Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fb8e68730f5fb2f9e448-829c9e641fe48ec31331",
+              "file": "tests/features/dynamicMultiOrders.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple random products from the menu and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 64,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:55.129Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fb8e68730f5fb2f9e448-bf1a3738c87949972cfe",
+              "file": "tests/features/dynamicMultiOrders.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\features\\dynamicSingleItemMultiQuantity.feature.spec.js",
+      "file": "tests/features/dynamicSingleItemMultiQuantity.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Dynamic Single Item Multi-Quantity Order Flow",
+          "file": "tests/features/dynamicSingleItemMultiQuantity.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add a random item, dynamically increase quantity, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 44059,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating all available menu items dynamically...\n"
+                        },
+                        {
+                          "text": "Dynamically selected item index: 3 out of 9\n"
+                        },
+                        {
+                          "text": "Extracted Random Item Name: Steamed Momos\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 1117
+                        },
+                        {
+                          "title": "When I add a random item from the menu to my cart",
+                          "duration": 3455
+                        },
+                        {
+                          "title": "And I increase the quantity of the dynamically added item to 4",
+                          "duration": 1645
+                        },
+                        {
+                          "title": "Then the cart should accurately reflect the dynamic total price",
+                          "duration": 214
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 3124
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 24278
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 4193
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:58:27.735Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9510bd872757ffb9441e-70ea61e6c1474c99212a",
+              "file": "tests/features/dynamicSingleItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a random item, dynamically increase quantity, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 15,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:50.775Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9510bd872757ffb9441e-dfaf3e60a66529c78026",
+              "file": "tests/features/dynamicSingleItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a random item, dynamically increase quantity, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 16,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:55.362Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9510bd872757ffb9441e-89d1b1b8461f5cebd1c3",
+              "file": "tests/features/dynamicSingleItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\features\\dynamicSingleItemOrder.feature.spec.js",
+      "file": "tests/features/dynamicSingleItemOrder.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Dynamic Single Item Order Flow",
+          "file": "tests/features/dynamicSingleItemOrder.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add a random single product from the menu and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 41858,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating all available menu items dynamically...\n"
+                        },
+                        {
+                          "text": "Dynamically selected item index: 7 out of 9\n"
+                        },
+                        {
+                          "text": "Extracted Random Item Name: Masala Chai\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 1319
+                        },
+                        {
+                          "title": "When I add a random item from the menu to my cart",
+                          "duration": 3087
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 2255
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 21740
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 5218
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:58:28.668Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "113dbb58a2395cd41d9a-1df24ad15443604743d0",
+              "file": "tests/features/dynamicSingleItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a random single product from the menu and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 10,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:50.956Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113dbb58a2395cd41d9a-487548402d6fd2260a17",
+              "file": "tests/features/dynamicSingleItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a random single product from the menu and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 13,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:55.579Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113dbb58a2395cd41d9a-35d1be13887b09058bf6",
+              "file": "tests/features/dynamicSingleItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\features\\staticMultiItemMultiQuantity.feature.spec.js",
+      "file": "tests/features/staticMultiItemMultiQuantity.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Static Multi-Item Multi-Quantity Order Flow",
+          "file": "tests/features/staticMultiItemMultiQuantity.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add multiple static items from JSON, increase quantities, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 47605,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating and adding: Vada Pav\n"
+                        },
+                        {
+                          "text": "Locating and adding: Masala Chai\n"
+                        },
+                        {
+                          "text": "Locating and adding: Chole Bhature\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 786
+                        },
+                        {
+                          "title": "When I configure my cart with the static multi-quantity items from JSON",
+                          "duration": 8448
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 2666
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 22666
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 5445
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:59:10.671Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06369e85b9a6b1c82e8c-5e1e13b046fba5003106",
+              "file": "tests/features/staticMultiItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple static items from JSON, increase quantities, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 15,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:51.002Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "06369e85b9a6b1c82e8c-285487cae7474db59ab6",
+              "file": "tests/features/staticMultiItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple static items from JSON, increase quantities, and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 14,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:55.588Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "06369e85b9a6b1c82e8c-626800345ae55981bf24",
+              "file": "tests/features/staticMultiItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\features\\staticMultiItemOrder.feature.spec.js",
+      "file": "tests/features/staticMultiItemOrder.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Multi-Item Order Flow",
+          "file": "tests/features/staticMultiItemOrder.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add multiple products from configuration and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 47200,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating and adding: Butter Chicken with Biryani\n"
+                        },
+                        {
+                          "text": "Locating and adding: Vada Pav\n"
+                        },
+                        {
+                          "text": "Locating and adding: Chole Bhature\n"
+                        },
+                        {
+                          "text": "Locating and adding: Masala Chai\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 997
+                        },
+                        {
+                          "title": "When I add all products from the multiple items configuration to my cart",
+                          "duration": 4638
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 4101
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 24541
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 5226
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:59:11.927Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e698f81d5715c120e1d-e1e9684d1c7f4b8a8b65",
+              "file": "tests/features/staticMultiItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple products from configuration and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 9,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:51.194Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "6e698f81d5715c120e1d-7602648a55d54a30c83c",
+              "file": "tests/features/staticMultiItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add multiple products from configuration and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 12,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:55.801Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "6e698f81d5715c120e1d-e65949815483465c54dd",
+              "file": "tests/features/staticMultiItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\features\\staticSingleItemMultiQuantity.feature.spec.js",
+      "file": "tests/features/staticSingleItemMultiQuantity.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Static Item Order multiple quantity Flow",
+          "file": "tests/features/staticSingleItemMultiQuantity.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add a specific single item, increase its quantity, and place the order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 43879,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating and adding: Margherita Pizza\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 1448
+                        },
+                        {
+                          "title": "When I add the \"Margherita Pizza\" to my cart",
+                          "duration": 3252
+                        },
+                        {
+                          "title": "And I increase the quantity of \"Margherita Pizza\" to 3",
+                          "duration": 527
+                        },
+                        {
+                          "title": "Then the cart should reflect the updated quantity and total price",
+                          "duration": 94
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 2017
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 20124
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 4941
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:59:58.376Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9b9614aaa9fa96dd6262-36d9626a43b1930b33e0",
+              "file": "tests/features/staticSingleItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a specific single item, increase its quantity, and place the order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 11,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:51.228Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9b9614aaa9fa96dd6262-985e044cd6b9590bcc3a",
+              "file": "tests/features/staticSingleItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a specific single item, increase its quantity, and place the order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 14,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:55.813Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9b9614aaa9fa96dd6262-2e9c51fb90b16b676997",
+              "file": "tests/features/staticSingleItemMultiQuantity.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\features\\staticSingleItemOrder.feature.spec.js",
+      "file": "tests/features/staticSingleItemOrder.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Single Item Order Flow",
+          "file": "tests/features/staticSingleItemOrder.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add a specific single item from JSON and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 44622,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Locating and adding: Margherita Pizza\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the FoodKart home page",
+                          "duration": 1404
+                        },
+                        {
+                          "title": "When I add the \"Margherita Pizza\" to my cart",
+                          "duration": 4660
+                        },
+                        {
+                          "title": "And I proceed to the checkout",
+                          "duration": 5881
+                        },
+                        {
+                          "title": "And I submit my payment details",
+                          "duration": 21559
+                        },
+                        {
+                          "title": "Then my order should be placed successfully",
+                          "duration": 4236
+                        }
+                      ],
+                      "startTime": "2026-05-30T19:59:59.334Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9e82e1154d3b002e6cc0-c57dc6b1c562c05413c1",
+              "file": "tests/features/staticSingleItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a specific single item from JSON and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 11,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:51.420Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9e82e1154d3b002e6cc0-58440cb078b30bc162f5",
+              "file": "tests/features/staticSingleItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Add a specific single item from JSON and place order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                        "line": 19,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 11,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-30T20:00:56.053Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
+                            "line": 19,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9e82e1154d3b002e6cc0-29296aa9e41465417536",
+              "file": "tests/features/staticSingleItemOrder.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-30T19:57:34.017Z",
+    "duration": 202221.834,
+    "expected": 8,
+    "skipped": 16,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
