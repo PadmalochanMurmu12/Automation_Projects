@@ -5,7 +5,7 @@ Feature: Dynamic Multi-Item Order Flow
 
   Scenario: Add multiple random products from the menu and place order
     Given I am on the FoodKart home page
-    When I add 3 random items from the menu to my cart
+    When I dynamically add 3 random items from the menu to my cart
     And I proceed to the checkout
     And I submit my payment details
     Then my order should be placed successfully

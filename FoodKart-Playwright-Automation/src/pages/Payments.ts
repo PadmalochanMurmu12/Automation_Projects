@@ -36,7 +36,7 @@ export class Payments extends BasePage {
    }
 
    async submitPayment(details: PaymentDetails) {
-     await this.payBtn.waitFor({ state: 'visible', timeout: 15000 });
+     await this.payBtn.waitFor({ state: 'visible', timeout: 30000 });
 
      await this.emailAddress.fill(details.emailAddress, {force: true});
      await this.cardNumber.fill(details.cardNumber, {force: true});

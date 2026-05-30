@@ -6,6 +6,13 @@
   "multipleItemsOrder": {
     "products": ["Butter Chicken with Biryani","Vada Pav","Chole Bhature","Masala Chai"]
   },
+  
+  "staticMultiQuantityOrder": [
+    { "name": "Vada Pav", "quantity": 3 },
+    { "name": "Masala Chai", "quantity": 2 },
+    { "name": "Chole Bhature", "quantity": 4 }
+  ],
+
   "mockCardDetails": {
     "emailAddress": "automation@test.com",
     "cardNumber": "4242424242424242", 
