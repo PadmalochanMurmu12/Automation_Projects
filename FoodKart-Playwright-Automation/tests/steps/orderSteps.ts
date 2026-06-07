@@ -1,19 +1,10 @@
 import { createBdd } from 'playwright-bdd';
 import { test, expect } from '../../src/fixtures/PageFixtures';
-import { PaymentDetails } from '../../src/pages/Payments';
+import { PaymentDetails } from '../../src/pages/payments'; 
 import * as testData from '../../src/constants/testData.json';
 
 const { Before, Given, When, Then } = createBdd(test);
 
-// --- RUNTIME STATE MEMORY ---
-// This acts as the short-term memory for all dynamic scenarios
-let runtimeState = {
-  dynamicItemName: "",
-  dynamicTargetQty: 1,
-  dynamicItemsArray: [] as string[] // Stores multiple random items
-};
-
-// Keep the skip logic intact to avoid WebKit/Firefox failures
 Before(async ({ $testInfo, browserName }) => {
   if (browserName === 'firefox' || browserName === 'webkit') {
     $testInfo.skip(); 
@@ -38,8 +29,8 @@ When('I increase the quantity of {string} to {int}', async ({ cartItems }, itemN
   await cartItems.increaseItemQuantity(itemName, targetQty);
 });
 
-Then('the cart should reflect the updated quantity and total price', async ({ cartItems }) => {
-  await cartItems.verifyItemTotals("Margherita Pizza", 3);
+Then('the cart should reflect the updated quantity of {string} to {int}', async ({ cartItems }, itemName: string, targetQty: number) => {
+  await cartItems.verifyItemTotals(itemName, targetQty);
 });
 
 When('I configure my cart with the static multi-quantity items from JSON', async ({ homePage, menuItems, cartItems }) => {
@@ -72,57 +63,56 @@ When('I add all products from the multiple items configuration to my cart', asyn
 // DYNAMIC SINGLE-ITEM STEPS
 // ==========================================
 
-When('I add a random item from the menu to my cart', async ({ homePage, menuItems }) => {
+// FIX: Destructuring 'orderState' from the test fixture to store dynamic data safely
+When('I add a random item from the menu to my cart', async ({ homePage, menuItems, orderState }) => {
   await homePage.clickOrderNow(); 
   
   const selectedItemName = await menuItems.addRandomItemToCart();
-  runtimeState.dynamicItemName = selectedItemName; 
+  orderState.dynamicItemName = selectedItemName; 
   
   await menuItems.clickCartBadge();
 });
 
-When('I increase the quantity of the dynamically added item to {int}', async ({ cartItems }, targetQty: number) => {
-  const itemName = runtimeState.dynamicItemName;
-  runtimeState.dynamicTargetQty = targetQty;
+When('I increase the quantity of the dynamically added item to {int}', async ({ cartItems, orderState }, targetQty: number) => {
+  const itemName = orderState.dynamicItemName;
+  orderState.dynamicTargetQty = targetQty;
   
   await cartItems.increaseItemQuantity(itemName, targetQty);
 });
 
-Then('the cart should accurately reflect the dynamic total price', async ({ cartItems }) => {
-  const itemName = runtimeState.dynamicItemName;
-  const targetQty = runtimeState.dynamicTargetQty;
+Then('the cart should accurately reflect the dynamic total price', async ({ cartItems, orderState }) => {
+  const itemName = orderState.dynamicItemName;
+  // Fallback to 1 just in case this is called in a scenario without quantity increases
+  const targetQty = orderState.dynamicTargetQty || 1; 
   
   await cartItems.verifyItemTotals(itemName, targetQty);
 });
 
 // ==========================================
-// DYNAMIC MULTI-ITEM STEPS (THE ENDGAME)
+// DYNAMIC MULTI-ITEM STEPS
 // ==========================================
 
-When('I dynamically add {int} random items from the menu to my cart', async ({ homePage, menuItems }, itemCount: number) => {
+When('I dynamically add {int} random items from the menu to my cart', async ({ homePage, menuItems, orderState }, itemCount: number) => {
   await homePage.clickOrderNow(); 
   
-  // Scrape the array of names and store it in our short-term memory
   const selectedItems = await menuItems.addMultipleRandomItemsToCart(itemCount);
-  runtimeState.dynamicItemsArray = selectedItems; 
+  orderState.dynamicItemsArray = selectedItems; 
   
   await menuItems.clickCartBadge();
 });
 
-When('I increase the quantity of all dynamically added items to {int}', async ({ cartItems }, targetQty: number) => {
-  runtimeState.dynamicTargetQty = targetQty;
+When('I increase the quantity of all dynamically added items to {int}', async ({ cartItems, orderState }, targetQty: number) => {
+  orderState.dynamicTargetQty = targetQty;
   
-  // Loop through our memory array and increase each item's quantity dynamically
-  for (const itemName of runtimeState.dynamicItemsArray) {
+  for (const itemName of orderState.dynamicItemsArray) {
     await cartItems.increaseItemQuantity(itemName, targetQty);
   }
 });
 
-Then('the cart should accurately reflect the dynamic total prices for all items', async ({ cartItems }) => {
-  const targetQty = runtimeState.dynamicTargetQty;
+Then('the cart should accurately reflect the dynamic total prices for all items', async ({ cartItems, orderState }) => {
+  const targetQty = orderState.dynamicTargetQty || 1;
   
-  // Loop through our memory array and assert the math for every single item
-  for (const itemName of runtimeState.dynamicItemsArray) {
+  for (const itemName of orderState.dynamicItemsArray) {
     await cartItems.verifyItemTotals(itemName, targetQty);
   }
 });

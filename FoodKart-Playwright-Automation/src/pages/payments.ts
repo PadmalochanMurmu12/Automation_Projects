@@ -1,5 +1,5 @@
-import { Locator, Page } from "@playwright/test";
-import { BasePage } from "./BasePage";
+import { Locator, Page , expect} from "@playwright/test";
+import { BasePage } from "./base-page";
 
 export interface PaymentDetails {
    emailAddress: string;
@@ -12,6 +12,7 @@ export interface PaymentDetails {
 }
 
 export class Payments extends BasePage {
+  //  readonly stripeFrame: any; 
    readonly emailAddress: Locator;
    readonly cardNumber: Locator;
    readonly expiryDate: Locator;
@@ -36,22 +37,22 @@ export class Payments extends BasePage {
    }
 
    async submitPayment(details: PaymentDetails) {
-     await this.payBtn.waitFor({ state: 'visible', timeout: 30000 });
-
-     await this.emailAddress.fill(details.emailAddress, {force: true});
-     await this.cardNumber.fill(details.cardNumber, {force: true});
-     await this.expiryDate.fill(details.expiryDate, {force: true});
-     await this.cvv.fill(details.cvv, {force: true});
-     await this.cardHolderName.fill(details.cardHolderName, {force: true});
+     await expect(this.emailAddress).toBeVisible({ timeout: 15000 });
+     await this.emailAddress.fill(details.emailAddress);
+     await this.cardNumber.fill(details.cardNumber);
+     await this.expiryDate.fill(details.expiryDate);
+     await this.cvv.fill(details.cvv);
+     await this.cardHolderName.fill(details.cardHolderName);
      
      if (details.zipCode && await this.zipCode.isVisible()) {
-       await this.zipCode.fill(details.zipCode, {force: true});
+       await this.zipCode.fill(details.zipCode);
      }
 
      if (await this.saveInfoCheckbox.isVisible() && await this.saveInfoCheckbox.isChecked()) {
-         await this.saveInfoCheckbox.uncheck({ force: true });
+         await this.saveInfoCheckbox.uncheck();
      }
 
-     await this.payBtn.click({force: true});
+     await this.payBtn.click();
    }
+   
 }

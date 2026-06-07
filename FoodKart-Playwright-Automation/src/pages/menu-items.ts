@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { BasePage } from './base-page';
 
 export class MenuItems extends BasePage {
     readonly cartBadge: Locator;

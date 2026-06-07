@@ -1,19 +1,39 @@
-# Dependency Directories
-node_modules/
+# =========================
+# 🛑 SECURITY & SECRETS (CRITICAL)
+# =========================
+**/.env
+**/*.pem
+**/*.key
 
-# Playwright Test Output & Caching
-test-results/
-playwright-report/
-blob-report/
-playwright/.cache/
+# =========================
+# 📦 DEPENDENCY DIRECTORIES
+# =========================
+**/node_modules/
 
-# Playwright-BDD Generated Code
-.features-gen/
+# =========================
+# 🎭 PLAYWRIGHT TEST OUTPUT & CACHING
+# =========================
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/.cache/
 
-# Allure Reporting Artifacts
-allure-results/
-allure-report/
+# =========================
+# ⚙️ PLAYWRIGHT-BDD GENERATED CODE
+# =========================
+**/.features-gen/
 
-# OS / IDE Artifacts
-.DS_Store
-.vscode/
+# =========================
+# 📊 ALLURE REPORTING ARTIFACTS
+# =========================
+**/allure-results/
+**/allure-report/
+
+# =========================
+# 💻 OS / IDE ARTIFACTS & LOGS
+# =========================
+**/.DS_Store
+**/.vscode/
+**/.idea/
+**/*.log
+/.metadata/

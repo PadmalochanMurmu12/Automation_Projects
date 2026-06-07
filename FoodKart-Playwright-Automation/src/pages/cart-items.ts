@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { BasePage } from './base-page';
 
 export class CartItems extends BasePage {
     readonly checkoutBtn: Locator;
@@ -27,22 +27,21 @@ export class CartItems extends BasePage {
     }
 
     async verifyItemTotals(itemName: string, expectedQuantity: number) {
-        const itemRow = this.page.locator(`li:has-text("${itemName}")`);
-        
-        const qtyDisplay = itemRow.getByTestId(/item-qty-/);
-        await expect(qtyDisplay).toHaveText(expectedQuantity.toString());
+    const itemRow = this.page.locator(`li:has-text("${itemName}")`);
+    const qtyDisplay = itemRow.getByTestId(/item-qty-/);
+    await expect(qtyDisplay).toHaveText(expectedQuantity.toString());
 
-        const unitPriceElement = itemRow.locator('p.text-slate-500');
-        const unitPriceText = await unitPriceElement.innerText();
+    // Auto-retrying block for dynamic DOM calculations
+    await expect(async () => {
+        const unitPriceText = await itemRow.locator('p.text-slate-500').innerText();
         const unitPrice = parseInt(unitPriceText.replace(/[^0-9]/g, ''), 10);
-
-        const totalPriceElement = itemRow.getByTestId(/item-total-/);
-        const totalPriceText = await totalPriceElement.innerText();
+        
+        const totalPriceText = await itemRow.getByTestId(/item-total-/).innerText();
         const actualTotal = parseInt(totalPriceText.replace(/[^0-9]/g, ''), 10);
-
-        const expectedTotal = unitPrice * expectedQuantity;
-        expect(actualTotal).toBe(expectedTotal);
-    }
+        
+        expect(actualTotal).toBe(unitPrice * expectedQuantity);
+    }).toPass({ timeout: 5000 });
+}
 
   async proceedToCheckout() {
 
