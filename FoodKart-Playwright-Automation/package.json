@@ -8,7 +8,7 @@
     "bddgen": "bddgen",
     "pretest": "npm run clean && npm run bddgen",
     "test": "playwright test",
-    "posttest": "tsx src/utils/mailer.ts", 
+    "posttest": "tsx src/utils/mailer.ts",
     "report": "allure generate ./allure-results --clean && allure open ./allure-report"
   },
   "keywords": [],
@@ -28,6 +28,7 @@
     "tsx": "^4.22.3"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "nodemailer": "^8.0.10"
   }
 }

@@ -127,17 +127,17 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 50254,
+                      "duration": 95008,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Locating menu items to dynamically select 3 unique dishes...\n"
                         },
                         {
-                          "text": "Dynamically selected indices: 4, 6, 2\n"
+                          "text": "Dynamically selected indices: 3, 0, 5\n"
                         },
                         {
-                          "text": "Extracted Random Items: Chole Kulche, Chole Bhature, Margherita Pizza\n"
+                          "text": "Extracted Random Items: Steamed Momos, Butter Chicken with Biryani, Crispy Spring Rolls\n"
                         }
                       ],
                       "stderr": [],
@@ -145,34 +145,34 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 1705
+                          "duration": 11296
                         },
                         {
                           "title": "When I dynamically add 3 random items from the menu to my cart",
-                          "duration": 7758
+                          "duration": 12181
                         },
                         {
                           "title": "And I increase the quantity of all dynamically added items to 2",
-                          "duration": 805
+                          "duration": 2344
                         },
                         {
                           "title": "Then the cart should accurately reflect the dynamic total prices for all items",
-                          "duration": 451
+                          "duration": 2228
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 3143
+                          "duration": 20083
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 24211
+                          "duration": 21760
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4339
+                          "duration": 6230
                         }
                       ],
-                      "startTime": "2026-05-30T19:57:37.577Z",
+                      "startTime": "2026-06-07T13:25:44.095Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -197,7 +197,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -210,18 +210,18 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 86,
+                      "duration": 64,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:50.400Z",
+                      "startTime": "2026-06-07T13:29:33.319Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -249,7 +249,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -260,20 +260,20 @@
                   "results": [
                     {
                       "workerIndex": 4,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 43,
+                      "duration": 34,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:54.956Z",
+                      "startTime": "2026-06-07T13:29:38.043Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -322,17 +322,17 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 49326,
+                      "duration": 98450,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Locating menu items to dynamically select 3 unique dishes...\n"
                         },
                         {
-                          "text": "Dynamically selected indices: 0, 5, 8\n"
+                          "text": "Dynamically selected indices: 2, 7, 0\n"
                         },
                         {
-                          "text": "Extracted Random Items: Butter Chicken with Biryani, Crispy Spring Rolls, Chicken Frankie Roll\n"
+                          "text": "Extracted Random Items: Margherita Pizza, Masala Chai, Butter Chicken with Biryani\n"
                         }
                       ],
                       "stderr": [],
@@ -340,26 +340,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 1216
+                          "duration": 9788
                         },
                         {
                           "title": "When I dynamically add 3 random items from the menu to my cart",
-                          "duration": 7287
+                          "duration": 11596
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 5462
+                          "duration": 25469
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 22461
+                          "duration": 29527
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 5435
+                          "duration": 4455
                         }
                       ],
-                      "startTime": "2026-05-30T19:57:37.577Z",
+                      "startTime": "2026-06-07T13:25:44.122Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -384,7 +384,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -397,18 +397,18 @@
                       "workerIndex": 3,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 44,
+                      "duration": 56,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:50.345Z",
+                      "startTime": "2026-06-07T13:29:35.276Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -436,7 +436,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -447,20 +447,20 @@
                   "results": [
                     {
                       "workerIndex": 5,
-                      "parallelIndex": 0,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 64,
+                      "duration": 27,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:55.129Z",
+                      "startTime": "2026-06-07T13:29:39.257Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -506,20 +506,20 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 44059,
+                      "duration": 37908,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Locating all available menu items dynamically...\n"
                         },
                         {
-                          "text": "Dynamically selected item index: 3 out of 9\n"
+                          "text": "Dynamically selected item index: 5 out of 9\n"
                         },
                         {
-                          "text": "Extracted Random Item Name: Steamed Momos\n"
+                          "text": "Extracted Random Item Name: Crispy Spring Rolls\n"
                         }
                       ],
                       "stderr": [],
@@ -527,34 +527,34 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 1117
+                          "duration": 981
                         },
                         {
                           "title": "When I add a random item from the menu to my cart",
-                          "duration": 3455
+                          "duration": 1688
                         },
                         {
                           "title": "And I increase the quantity of the dynamically added item to 4",
-                          "duration": 1645
+                          "duration": 685
                         },
                         {
                           "title": "Then the cart should accurately reflect the dynamic total price",
-                          "duration": 214
+                          "duration": 87
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 3124
+                          "duration": 2267
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 24278
+                          "duration": 21559
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4193
+                          "duration": 4775
                         }
                       ],
-                      "startTime": "2026-05-30T19:58:27.735Z",
+                      "startTime": "2026-06-07T13:27:20.927Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -579,7 +579,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -589,21 +589,21 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 1,
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 15,
+                      "duration": 12,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:50.775Z",
+                      "startTime": "2026-06-07T13:29:33.707Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -631,7 +631,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -642,20 +642,20 @@
                   "results": [
                     {
                       "workerIndex": 4,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 16,
+                      "duration": 12,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:55.362Z",
+                      "startTime": "2026-06-07T13:29:38.406Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -701,20 +701,20 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 41858,
+                      "duration": 35453,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Locating all available menu items dynamically...\n"
                         },
                         {
-                          "text": "Dynamically selected item index: 7 out of 9\n"
+                          "text": "Dynamically selected item index: 4 out of 9\n"
                         },
                         {
-                          "text": "Extracted Random Item Name: Masala Chai\n"
+                          "text": "Extracted Random Item Name: Chole Kulche\n"
                         }
                       ],
                       "stderr": [],
@@ -722,26 +722,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 1319
+                          "duration": 931
                         },
                         {
                           "title": "When I add a random item from the menu to my cart",
-                          "duration": 3087
+                          "duration": 3446
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 2255
+                          "duration": 2929
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 21740
+                          "duration": 19569
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 5218
+                          "duration": 3869
                         }
                       ],
-                      "startTime": "2026-05-30T19:58:28.668Z",
+                      "startTime": "2026-06-07T13:27:24.361Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -766,7 +766,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -779,18 +779,18 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 10,
+                      "duration": 8,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:50.956Z",
+                      "startTime": "2026-06-07T13:29:33.844Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -818,7 +818,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -829,20 +829,20 @@
                   "results": [
                     {
                       "workerIndex": 4,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 13,
+                      "duration": 15,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:55.579Z",
+                      "startTime": "2026-06-07T13:29:38.528Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -891,7 +891,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 47605,
+                      "duration": 40358,
                       "errors": [],
                       "stdout": [
                         {
@@ -909,26 +909,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 786
+                          "duration": 877
                         },
                         {
                           "title": "When I configure my cart with the static multi-quantity items from JSON",
-                          "duration": 8448
+                          "duration": 5423
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 2666
+                          "duration": 1998
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 22666
+                          "duration": 16894
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 5445
+                          "duration": 5054
                         }
                       ],
-                      "startTime": "2026-05-30T19:59:10.671Z",
+                      "startTime": "2026-06-07T13:27:58.921Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -953,7 +953,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -963,21 +963,21 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 1,
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 15,
+                      "duration": 11,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:51.002Z",
+                      "startTime": "2026-06-07T13:29:33.945Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1005,7 +1005,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -1015,21 +1015,21 @@
                   "projectName": "webkit",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 14,
+                      "duration": 11,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:55.588Z",
+                      "startTime": "2026-06-07T13:29:38.627Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1078,7 +1078,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 47200,
+                      "duration": 42605,
                       "errors": [],
                       "stdout": [
                         {
@@ -1099,26 +1099,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 997
+                          "duration": 963
                         },
                         {
                           "title": "When I add all products from the multiple items configuration to my cart",
-                          "duration": 4638
+                          "duration": 4716
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 4101
+                          "duration": 2667
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 24541
+                          "duration": 21039
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 5226
+                          "duration": 5108
                         }
                       ],
-                      "startTime": "2026-05-30T19:59:11.927Z",
+                      "startTime": "2026-06-07T13:27:59.958Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1143,7 +1143,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -1156,18 +1156,18 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 9,
+                      "duration": 8,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:51.194Z",
+                      "startTime": "2026-06-07T13:29:34.062Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1195,7 +1195,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -1206,20 +1206,20 @@
                   "results": [
                     {
                       "workerIndex": 4,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 12,
+                      "duration": 9,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:55.801Z",
+                      "startTime": "2026-06-07T13:29:38.757Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1268,7 +1268,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 43879,
+                      "duration": 37305,
                       "errors": [],
                       "stdout": [
                         {
@@ -1280,34 +1280,34 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 1448
+                          "duration": 766
                         },
                         {
                           "title": "When I add the \"Margherita Pizza\" to my cart",
-                          "duration": 3252
+                          "duration": 1074
                         },
                         {
                           "title": "And I increase the quantity of \"Margherita Pizza\" to 3",
-                          "duration": 527
+                          "duration": 357
                         },
                         {
-                          "title": "Then the cart should reflect the updated quantity and total price",
-                          "duration": 94
+                          "title": "Then the cart should reflect the updated quantity of \"Margherita Pizza\" to 3",
+                          "duration": 63
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 2017
+                          "duration": 1553
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 20124
+                          "duration": 21823
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4941
+                          "duration": 4920
                         }
                       ],
-                      "startTime": "2026-05-30T19:59:58.376Z",
+                      "startTime": "2026-06-07T13:28:39.353Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1332,7 +1332,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -1342,21 +1342,21 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 1,
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 11,
+                      "duration": 12,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:51.228Z",
+                      "startTime": "2026-06-07T13:29:34.176Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1384,7 +1384,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -1394,21 +1394,21 @@
                   "projectName": "webkit",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 14,
+                      "duration": 7,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:55.813Z",
+                      "startTime": "2026-06-07T13:29:38.847Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1457,7 +1457,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 44622,
+                      "duration": 35130,
                       "errors": [],
                       "stdout": [
                         {
@@ -1469,26 +1469,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 1404
+                          "duration": 1062
                         },
                         {
                           "title": "When I add the \"Margherita Pizza\" to my cart",
-                          "duration": 4660
+                          "duration": 5207
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 5881
+                          "duration": 2016
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 21559
+                          "duration": 16905
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4236
+                          "duration": 4774
                         }
                       ],
-                      "startTime": "2026-05-30T19:59:59.334Z",
+                      "startTime": "2026-06-07T13:28:42.657Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1513,7 +1513,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -1531,13 +1531,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:51.420Z",
+                      "startTime": "2026-06-07T13:29:34.282Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1565,7 +1565,7 @@
                       "type": "skip",
                       "location": {
                         "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                        "line": 19,
+                        "line": 10,
                         "column": 15
                       }
                     }
@@ -1576,20 +1576,20 @@
                   "results": [
                     {
                       "workerIndex": 4,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 11,
+                      "duration": 7,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-30T20:00:56.053Z",
+                      "startTime": "2026-06-07T13:29:38.944Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "D:\\Automation_Projects\\FoodKart-Playwright-Automation\\tests\\steps\\orderSteps.ts",
-                            "line": 19,
+                            "line": 10,
                             "column": 15
                           }
                         }
@@ -1612,8 +1612,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-30T19:57:34.017Z",
-    "duration": 202221.834,
+    "startTime": "2026-06-07T13:25:40.084Z",
+    "duration": 239529.984,
     "expected": 8,
     "skipped": 16,
     "unexpected": 0,
