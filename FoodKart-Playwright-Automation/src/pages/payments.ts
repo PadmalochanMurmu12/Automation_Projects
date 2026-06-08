@@ -12,7 +12,7 @@ export interface PaymentDetails {
 }
 
 export class Payments extends BasePage {
-  //  readonly stripeFrame: any; 
+  
    readonly emailAddress: Locator;
    readonly cardNumber: Locator;
    readonly expiryDate: Locator;
@@ -37,7 +37,7 @@ export class Payments extends BasePage {
    }
 
    async submitPayment(details: PaymentDetails) {
-     await expect(this.emailAddress).toBeVisible({ timeout: 15000 });
+     await expect(this.emailAddress).toBeVisible({ timeout: 45000 });
      await this.emailAddress.fill(details.emailAddress);
      await this.cardNumber.fill(details.cardNumber);
      await this.expiryDate.fill(details.expiryDate);

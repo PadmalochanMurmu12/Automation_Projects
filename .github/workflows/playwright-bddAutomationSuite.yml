@@ -43,6 +43,11 @@ jobs:
       run: npm run test
       env:
         BASE_URL: ${{ vars.BASE_URL }}
+
+    - name: 📧 Send Email Report
+      if: always()
+      run: npx tsx src/utils/mailer.ts
+      env:
         EMAIL_USER: ${{ secrets.EMAIL_USER }}
         EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
 

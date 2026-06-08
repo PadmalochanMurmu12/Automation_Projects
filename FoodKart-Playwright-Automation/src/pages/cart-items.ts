@@ -11,7 +11,7 @@ export class CartItems extends BasePage {
 
     async increaseItemQuantity(itemName: string, targetQuantity: number) {
         const itemRow = this.page.locator(`li:has-text("${itemName}")`);
-        
+
         const plusBtn = itemRow.getByTestId(/increase-qty-/);
         const qtyDisplay = itemRow.getByTestId(/item-qty-/);
 
@@ -27,28 +27,28 @@ export class CartItems extends BasePage {
     }
 
     async verifyItemTotals(itemName: string, expectedQuantity: number) {
-    const itemRow = this.page.locator(`li:has-text("${itemName}")`);
-    const qtyDisplay = itemRow.getByTestId(/item-qty-/);
-    await expect(qtyDisplay).toHaveText(expectedQuantity.toString());
+        const itemRow = this.page.locator(`li:has-text("${itemName}")`);
+        const qtyDisplay = itemRow.getByTestId(/item-qty-/);
+        await expect(qtyDisplay).toHaveText(expectedQuantity.toString());
 
-    // Auto-retrying block for dynamic DOM calculations
-    await expect(async () => {
-        const unitPriceText = await itemRow.locator('p.text-slate-500').innerText();
-        const unitPrice = parseInt(unitPriceText.replace(/[^0-9]/g, ''), 10);
-        
-        const totalPriceText = await itemRow.getByTestId(/item-total-/).innerText();
-        const actualTotal = parseInt(totalPriceText.replace(/[^0-9]/g, ''), 10);
-        
-        expect(actualTotal).toBe(unitPrice * expectedQuantity);
-    }).toPass({ timeout: 5000 });
-}
+        // Auto-retrying block for dynamic DOM calculations
+        await expect(async () => {
+            const unitPriceText = await itemRow.locator('p.text-slate-500').innerText();
+            const unitPrice = parseInt(unitPriceText.replace(/[^0-9]/g, ''), 10);
 
-  async proceedToCheckout() {
+            const totalPriceText = await itemRow.getByTestId(/item-total-/).innerText();
+            const actualTotal = parseInt(totalPriceText.replace(/[^0-9]/g, ''), 10);
 
-    await expect(this.page.getByText('Total Amount')).toBeVisible();
-    await expect(this.checkoutBtn).toBeEnabled();
-    await this.checkoutBtn.click({ delay: 50 });
-    await this.page.waitForURL(/.*checkout\.stripe\.com.*/i, { timeout: 30000, waitUntil: 'commit' });
-    
-  }
+            expect(actualTotal).toBe(unitPrice * expectedQuantity);
+        }).toPass({ timeout: 5000 });
+    }
+
+    async proceedToCheckout() {
+
+        await expect(this.page.getByText('Total Amount')).toBeVisible();
+        await expect(this.checkoutBtn).toBeEnabled();
+        await this.checkoutBtn.click({ delay: 50 });
+        await this.page.waitForURL(/.*checkout\.stripe\.com.*/i, { timeout: 60000, waitUntil: 'commit' });
+
+    }
 }
