@@ -8,7 +8,6 @@
     "bddgen": "bddgen",
     "pretest": "npm run clean && npm run bddgen",
     "test": "playwright test",
-    "posttest": "tsx src/utils/mailer.ts",
     "report": "allure generate ./allure-results --clean && allure open ./allure-report"
   },
   "keywords": [],

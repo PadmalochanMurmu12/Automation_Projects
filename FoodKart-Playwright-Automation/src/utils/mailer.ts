@@ -57,14 +57,16 @@ async function sendTestReport(): Promise<void> {
     report.suites.forEach((mainSuite: JSONReportSuite) => {
         const allSpecs = extractSpecs(mainSuite);
         
-        allSpecs.forEach((spec: JSONReportSpec) => {
+        allSpecs.forEach((spec: any) => {
             total++;
-            if (spec.ok) {
-                passed++;
-            } else if (spec.tests[0]?.status === 'skipped') {
+            const testResult = spec.tests && spec.tests.length > 0 ? spec.tests[0] : null;
+            
+            if (testResult && testResult.status === 'skipped') {
                 skipped++;
+            } else if (!spec.ok) {
+                failed++; // If ok is false, it's a hard failure
             } else {
-                failed++;
+                passed++; // If ok is true and it wasn't skipped, it passed
             }
         });
     });

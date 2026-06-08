@@ -127,17 +127,17 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 95008,
+                      "duration": 94846,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Locating menu items to dynamically select 3 unique dishes...\n"
                         },
                         {
-                          "text": "Dynamically selected indices: 3, 0, 5\n"
+                          "text": "Dynamically selected indices: 7, 8, 0\n"
                         },
                         {
-                          "text": "Extracted Random Items: Steamed Momos, Butter Chicken with Biryani, Crispy Spring Rolls\n"
+                          "text": "Extracted Random Items: Masala Chai, Chicken Frankie Roll, Butter Chicken with Biryani\n"
                         }
                       ],
                       "stderr": [],
@@ -145,34 +145,34 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 11296
+                          "duration": 12073
                         },
                         {
                           "title": "When I dynamically add 3 random items from the menu to my cart",
-                          "duration": 12181
+                          "duration": 11508
                         },
                         {
                           "title": "And I increase the quantity of all dynamically added items to 2",
-                          "duration": 2344
+                          "duration": 3611
                         },
                         {
                           "title": "Then the cart should accurately reflect the dynamic total prices for all items",
-                          "duration": 2228
+                          "duration": 1010
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 20083
+                          "duration": 11612
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 21760
+                          "duration": 17943
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 6230
+                          "duration": 20457
                         }
                       ],
-                      "startTime": "2026-06-07T13:25:44.095Z",
+                      "startTime": "2026-06-08T09:56:11.017Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -208,14 +208,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 64,
+                      "duration": 51,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:33.319Z",
+                      "startTime": "2026-06-08T10:01:12.126Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -262,12 +262,12 @@
                       "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 34,
+                      "duration": 29,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:38.043Z",
+                      "startTime": "2026-06-08T10:01:17.919Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -322,17 +322,17 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 98450,
+                      "duration": 97928,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Locating menu items to dynamically select 3 unique dishes...\n"
                         },
                         {
-                          "text": "Dynamically selected indices: 2, 7, 0\n"
+                          "text": "Dynamically selected indices: 6, 1, 4\n"
                         },
                         {
-                          "text": "Extracted Random Items: Margherita Pizza, Masala Chai, Butter Chicken with Biryani\n"
+                          "text": "Extracted Random Items: Chole Bhature, Vada Pav, Chole Kulche\n"
                         }
                       ],
                       "stderr": [],
@@ -340,26 +340,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 9788
+                          "duration": 12985
                         },
                         {
                           "title": "When I dynamically add 3 random items from the menu to my cart",
-                          "duration": 11596
+                          "duration": 4866
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 25469
+                          "duration": 14306
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 29527
+                          "duration": 30648
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4455
+                          "duration": 19100
                         }
                       ],
-                      "startTime": "2026-06-07T13:25:44.122Z",
+                      "startTime": "2026-06-08T09:56:10.910Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -395,14 +395,14 @@
                   "results": [
                     {
                       "workerIndex": 3,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 56,
+                      "duration": 66,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:35.276Z",
+                      "startTime": "2026-06-08T10:01:12.146Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -449,12 +449,12 @@
                       "workerIndex": 5,
                       "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 27,
+                      "duration": 68,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:39.257Z",
+                      "startTime": "2026-06-08T10:01:18.035Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -509,7 +509,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 37908,
+                      "duration": 78027,
                       "errors": [],
                       "stdout": [
                         {
@@ -527,34 +527,34 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 981
+                          "duration": 7696
                         },
                         {
                           "title": "When I add a random item from the menu to my cart",
-                          "duration": 1688
+                          "duration": 3276
                         },
                         {
                           "title": "And I increase the quantity of the dynamically added item to 4",
-                          "duration": 685
+                          "duration": 804
                         },
                         {
                           "title": "Then the cart should accurately reflect the dynamic total price",
-                          "duration": 87
+                          "duration": 2497
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 2267
+                          "duration": 10637
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 21559
+                          "duration": 21439
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4775
+                          "duration": 21449
                         }
                       ],
-                      "startTime": "2026-06-07T13:27:20.927Z",
+                      "startTime": "2026-06-08T09:57:46.991Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -590,14 +590,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 12,
+                      "duration": 10,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:33.707Z",
+                      "startTime": "2026-06-08T10:01:12.677Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -644,12 +644,12 @@
                       "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 12,
+                      "duration": 14,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:38.406Z",
+                      "startTime": "2026-06-08T10:01:18.281Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -704,17 +704,17 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 35453,
+                      "duration": 73002,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Locating all available menu items dynamically...\n"
                         },
                         {
-                          "text": "Dynamically selected item index: 4 out of 9\n"
+                          "text": "Dynamically selected item index: 0 out of 9\n"
                         },
                         {
-                          "text": "Extracted Random Item Name: Chole Kulche\n"
+                          "text": "Extracted Random Item Name: Butter Chicken with Biryani\n"
                         }
                       ],
                       "stderr": [],
@@ -722,26 +722,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 931
+                          "duration": 6709
                         },
                         {
                           "title": "When I add a random item from the menu to my cart",
-                          "duration": 3446
+                          "duration": 3947
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 2929
+                          "duration": 11042
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 19569
+                          "duration": 14363
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 3869
+                          "duration": 21322
                         }
                       ],
-                      "startTime": "2026-06-07T13:27:24.361Z",
+                      "startTime": "2026-06-08T09:57:50.057Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -776,15 +776,15 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 8,
+                      "duration": 11,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:33.844Z",
+                      "startTime": "2026-06-08T10:01:12.677Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -831,12 +831,12 @@
                       "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 15,
+                      "duration": 11,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:38.528Z",
+                      "startTime": "2026-06-08T10:01:18.463Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -888,10 +888,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 40358,
+                      "duration": 58253,
                       "errors": [],
                       "stdout": [
                         {
@@ -909,26 +909,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 877
+                          "duration": 5611
                         },
                         {
                           "title": "When I configure my cart with the static multi-quantity items from JSON",
-                          "duration": 5423
+                          "duration": 8948
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 1998
+                          "duration": 4449
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 16894
+                          "duration": 8422
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 5054
+                          "duration": 14136
                         }
                       ],
-                      "startTime": "2026-06-07T13:27:58.921Z",
+                      "startTime": "2026-06-08T09:59:03.306Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -964,14 +964,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 11,
+                      "duration": 25,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:33.945Z",
+                      "startTime": "2026-06-08T10:01:12.959Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1015,15 +1015,15 @@
                   "projectName": "webkit",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 11,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:38.627Z",
+                      "startTime": "2026-06-08T10:01:18.467Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1075,10 +1075,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 42605,
+                      "duration": 57419,
                       "errors": [],
                       "stdout": [
                         {
@@ -1099,26 +1099,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 963
+                          "duration": 4196
                         },
                         {
                           "title": "When I add all products from the multiple items configuration to my cart",
-                          "duration": 4716
+                          "duration": 3964
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 2667
+                          "duration": 6525
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 21039
+                          "duration": 27315
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 5108
+                          "duration": 4677
                         }
                       ],
-                      "startTime": "2026-06-07T13:27:59.958Z",
+                      "startTime": "2026-06-08T09:59:05.435Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1153,15 +1153,15 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 8,
+                      "duration": 24,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:34.062Z",
+                      "startTime": "2026-06-08T10:01:12.960Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 9,
+                      "duration": 14,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:38.757Z",
+                      "startTime": "2026-06-08T10:01:18.681Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1265,10 +1265,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 37305,
+                      "duration": 53370,
                       "errors": [],
                       "stdout": [
                         {
@@ -1280,34 +1280,34 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 766
+                          "duration": 750
                         },
                         {
                           "title": "When I add the \"Margherita Pizza\" to my cart",
-                          "duration": 1074
+                          "duration": 2491
                         },
                         {
                           "title": "And I increase the quantity of \"Margherita Pizza\" to 3",
-                          "duration": 357
+                          "duration": 1200
                         },
                         {
                           "title": "Then the cart should reflect the updated quantity of \"Margherita Pizza\" to 3",
-                          "duration": 63
+                          "duration": 166
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 1553
+                          "duration": 5307
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 21823
+                          "duration": 23454
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4920
+                          "duration": 7528
                         }
                       ],
-                      "startTime": "2026-06-07T13:28:39.353Z",
+                      "startTime": "2026-06-08T10:00:01.827Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1342,15 +1342,15 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 12,
+                      "duration": 14,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:34.176Z",
+                      "startTime": "2026-06-08T10:01:13.191Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1394,15 +1394,15 @@
                   "projectName": "webkit",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 7,
+                      "duration": 13,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:38.847Z",
+                      "startTime": "2026-06-08T10:01:18.682Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1454,10 +1454,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 35130,
+                      "duration": 54169,
                       "errors": [],
                       "stdout": [
                         {
@@ -1469,26 +1469,26 @@
                       "steps": [
                         {
                           "title": "Given I am on the FoodKart home page",
-                          "duration": 1062
+                          "duration": 1478
                         },
                         {
                           "title": "When I add the \"Margherita Pizza\" to my cart",
-                          "duration": 5207
+                          "duration": 4562
                         },
                         {
                           "title": "And I proceed to the checkout",
-                          "duration": 2016
+                          "duration": 4825
                         },
                         {
                           "title": "And I submit my payment details",
-                          "duration": 16905
+                          "duration": 25178
                         },
                         {
                           "title": "Then my order should be placed successfully",
-                          "duration": 4774
+                          "duration": 6030
                         }
                       ],
-                      "startTime": "2026-06-07T13:28:42.657Z",
+                      "startTime": "2026-06-08T10:00:03.021Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1524,14 +1524,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "parallelIndex": 1,
                       "status": "skipped",
-                      "duration": 11,
+                      "duration": 13,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:34.282Z",
+                      "startTime": "2026-06-08T10:01:13.189Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1578,12 +1578,12 @@
                       "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 7,
+                      "duration": 10,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-07T13:29:38.944Z",
+                      "startTime": "2026-06-08T10:01:18.891Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1612,8 +1612,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-07T13:25:40.084Z",
-    "duration": 239529.984,
+    "startTime": "2026-06-08T09:56:07.424Z",
+    "duration": 311664.28400000004,
     "expected": 8,
     "skipped": 16,
     "unexpected": 0,
