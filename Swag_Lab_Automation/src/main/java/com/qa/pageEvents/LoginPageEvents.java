@@ -27,6 +27,7 @@ public class LoginPageEvents {
         // Feed the secure strings into your LoginPage (lp) elements
         lp.getUserName().sendKeys(user); // Replace getUsernameField() with your actual method name
         lp.getPassword().sendKeys(pass); // Replace getPasswordField() with your actual method name
+        lp.getLoginBtn().click();
     }
 
 	public boolean isLoginSuccessful() {

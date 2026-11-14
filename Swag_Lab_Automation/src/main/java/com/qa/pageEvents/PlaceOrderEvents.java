@@ -17,10 +17,10 @@ public class PlaceOrderEvents {
 	}
 
 	public void fillAddress() {
-		// Accessing data statically from Base class
-		orders.getfirstName().sendKeys(Base.prop.getProperty("firstname"));
-		orders.getlastName().sendKeys(Base.prop.getProperty("lastname"));
-		orders.getZipCode().sendKeys(Base.prop.getProperty("zipcode"));
+		// Accessing data dynamically via Smart Fetcher (supports both Cloud Secrets and Local Properties)
+		orders.getfirstName().sendKeys(Base.getSecureConfig("firstname"));
+		orders.getlastName().sendKeys(Base.getSecureConfig("lastname"));
+		orders.getZipCode().sendKeys(Base.getSecureConfig("zipcode"));
 	}
 
 	public void clickContinue() {

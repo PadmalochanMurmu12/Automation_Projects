@@ -15,28 +15,28 @@ public class Element_fetch
 		{
 		
 		case "XPATH":
-			return ((WebElement) Base.driver).findElement(By.xpath(identifierValue));
+			return Base.getDriver().findElement(By.xpath(identifierValue));
 			
 		case "CSS":
-			return ((WebElement) Base.driver).findElement(By.cssSelector(identifierValue));
+			return Base.getDriver().findElement(By.cssSelector(identifierValue));
 			
 		case "CLASS":
-			return ((WebElement) Base.driver).findElement(By.className(identifierValue));
+			return Base.getDriver().findElement(By.className(identifierValue));
 			
 		case "NAME":
-			return ((WebElement) Base.driver).findElement(By.name(identifierValue));
+			return Base.getDriver().findElement(By.name(identifierValue));
 			
 		case "ID":
-			return ((WebElement) Base.driver).findElement(By.id(identifierValue));
+			return Base.getDriver().findElement(By.id(identifierValue));
 			
 		case "LINK_TEXT":
-			return ((WebElement) Base.driver).findElement(By.linkText(identifierValue));
+			return Base.getDriver().findElement(By.linkText(identifierValue));
 			
 		case "PARTIAL_LINKTEXT":
-			return ((WebElement) Base.driver).findElement(By.partialLinkText(identifierValue));
+			return Base.getDriver().findElement(By.partialLinkText(identifierValue));
 			
 		case "TAG_NAME":
-			return ((WebElement) Base.driver).findElement(By.tagName(identifierValue));
+			return Base.getDriver().findElement(By.tagName(identifierValue));
 			
 			default:
 				return null;
@@ -50,28 +50,28 @@ public class Element_fetch
 		{
 		
 		case "XPATH":
-			return ((WebElement) Base.driver).findElements(By.xpath(identifierValue));
+			return Base.getDriver().findElements(By.xpath(identifierValue));
 			
 		case "CSS":
-			return ((WebElement) Base.driver).findElements(By.cssSelector(identifierValue));
+			return Base.getDriver().findElements(By.cssSelector(identifierValue));
 			
 		case "CLASS":
-			return ((WebElement) Base.driver).findElements(By.className(identifierValue));
+			return Base.getDriver().findElements(By.className(identifierValue));
 			
 		case "NAME":
-			return ((WebElement) Base.driver).findElements(By.name(identifierValue));
+			return Base.getDriver().findElements(By.name(identifierValue));
 			
 		case "ID":
-			return ((WebElement) Base.driver).findElements(By.id(identifierValue));
+			return Base.getDriver().findElements(By.id(identifierValue));
 			
 		case "LINK_TEXT":
-			return ((WebElement) Base.driver).findElements(By.linkText(identifierValue));
+			return Base.getDriver().findElements(By.linkText(identifierValue));
 			
 		case "PARTIAL_LINKTEXT":
-			return ((WebElement) Base.driver).findElements(By.partialLinkText(identifierValue));
+			return Base.getDriver().findElements(By.partialLinkText(identifierValue));
 			
 		case "TAG_NAME":
-			return ((WebElement) Base.driver).findElements(By.tagName(identifierValue));
+			return Base.getDriver().findElements(By.tagName(identifierValue));
 			
 			default:
 				return null;
